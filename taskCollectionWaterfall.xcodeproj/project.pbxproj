@@ -33,7 +33,7 @@
 		7EAF20F11E3056990076B7EA /* FSServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF20F01E3056990076B7EA /* FSServerManager.m */; };
 		7EAF20F41E3058DD0076B7EA /* FSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF20F31E3058DD0076B7EA /* FSUser.m */; };
 		7EAF20F71E305EC20076B7EA /* FSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF20F61E305EC20076B7EA /* FSCollectionViewCell.m */; };
-		7EAF20FD1E329CB30076B7EA /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF20FC1E329CB20076B7EA /* CHTCollectionViewWaterfallLayout.m */; };
+		7EAF21031E340ABD0076B7EA /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF21021E340ABD0076B7EA /* CHTCollectionViewWaterfallLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,8 +109,8 @@
 		7EAF20F31E3058DD0076B7EA /* FSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSUser.m; sourceTree = "<group>"; };
 		7EAF20F51E305EC20076B7EA /* FSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCollectionViewCell.h; sourceTree = "<group>"; };
 		7EAF20F61E305EC20076B7EA /* FSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCollectionViewCell.m; sourceTree = "<group>"; };
-		7EAF20FB1E329CB20076B7EA /* CHTCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHTCollectionViewWaterfallLayout.h; path = "../../../../../../Downloads/CHTCollectionViewWaterfallLayout-develop/CHTCollectionViewWaterfallLayout.h"; sourceTree = "<group>"; };
-		7EAF20FC1E329CB20076B7EA /* CHTCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHTCollectionViewWaterfallLayout.m; path = "../../../../../../Downloads/CHTCollectionViewWaterfallLayout-develop/CHTCollectionViewWaterfallLayout.m"; sourceTree = "<group>"; };
+		7EAF21011E340ABD0076B7EA /* CHTCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
+		7EAF21021E340ABD0076B7EA /* CHTCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,8 +210,8 @@
 		7EAF20BC1E3056210076B7EA /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				7EAF20FB1E329CB20076B7EA /* CHTCollectionViewWaterfallLayout.h */,
-				7EAF20FC1E329CB20076B7EA /* CHTCollectionViewWaterfallLayout.m */,
+				7EAF21011E340ABD0076B7EA /* CHTCollectionViewWaterfallLayout.h */,
+				7EAF21021E340ABD0076B7EA /* CHTCollectionViewWaterfallLayout.m */,
 				7EAF20BD1E3056210076B7EA /* AFNetworking */,
 				7EAF20CB1E3056210076B7EA /* UIKit+AFNetworking */,
 			);
@@ -410,7 +410,7 @@
 				7EAF20881E3051760076B7EA /* main.m in Sources */,
 				7EAF20E11E3056210076B7EA /* AFNetworkReachabilityManager.m in Sources */,
 				7EAF20F71E305EC20076B7EA /* FSCollectionViewCell.m in Sources */,
-				7EAF20FD1E329CB30076B7EA /* CHTCollectionViewWaterfallLayout.m in Sources */,
+				7EAF21031E340ABD0076B7EA /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				7EAF20ED1E3056210076B7EA /* UIRefreshControl+AFNetworking.m in Sources */,
 				7EAF20BB1E30527C0076B7EA /* FSCollectionViewController.m in Sources */,
 				7EAF20E61E3056210076B7EA /* AFAutoPurgingImageCache.m in Sources */,
