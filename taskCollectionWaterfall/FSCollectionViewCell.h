@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FSCollectionViewCell.h
 //  taskCollectionWaterfall
 //
 //  Created by Elerman on 19.01.17.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface FSCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *cellImage;
 
 @end
-
