@@ -35,8 +35,8 @@ static CGFloat SizeH = 120.0;
 static NSInteger ColumnCountWaterfallMax = 3;
 static NSInteger ColumnCountWaterfallMin = 1;
 
-static CGFloat MinimumColumnSpacing = 2;
-static CGFloat MinimumInteritemSpacing = 2;
+static CGFloat MinimumColumnSpacing = 5;
+static CGFloat MinimumInteritemSpacing = 5;
 
 static NSString * const reuseIdentifier = @"CollectionCell";
 static NSInteger photosInRequest = 16;
@@ -73,12 +73,11 @@ static NSInteger photosInRequest = 16;
 
 -(void) zoom:(UIPinchGestureRecognizer*) gesture{
     if (gesture.state == UIGestureRecognizerStateChanged) {
-        
+        NSLog(@"zoom ------:");
         self.scale *= gesture.scale;
         
         gesture.scale = 1.0;
-        
-       
+    
     }
 }
 
@@ -96,6 +95,7 @@ static NSInteger photosInRequest = 16;
          [self.photosArray addObjectsFromArray:photos];
          
          NSMutableArray *newPaths = [NSMutableArray array];
+         NSLog(@"photos count  = %ld  self photos array count = %ld photosInRequest = %ld", [photos count], [self.photosArray count], photosInRequest);
          for(int i = (int)[self.photosArray count] - (int)[photos count]; i < [self.photosArray count]; i++){
              [newPaths addObject:[NSIndexPath indexPathForItem:i inSection:0]];
          }
@@ -138,18 +138,25 @@ static NSInteger photosInRequest = 16;
     
     FSUser* user = [self.photosArray objectAtIndex:indexPath.row ];
     
-    NSInteger newColumnNumber = self.waterfallLayout.columnCount / self.scale ;
+    NSInteger newColumnNumber = round(self.waterfallLayout.columnCount / self.scale) ;
     
-    if(newColumnNumber <= ColumnCountWaterfallMax && newColumnNumber >= ColumnCountWaterfallMin){
+    if(newColumnNumber>=ColumnCountWaterfallMin && newColumnNumber<=ColumnCountWaterfallMax){
         NSLog(@"scale = %f", self.scale);
+        if(newColumnNumber == self.waterfallLayout.columnCount +1){
+            self.scale = 1;
+        }
         NSLog(@"newColumnNumber = %ld", newColumnNumber);
-        self.waterfallLayout.columnCount = newColumnNumber < 1 ? 1 :newColumnNumber;
+        self.waterfallLayout.columnCount =fmin (fmax (newColumnNumber, ColumnCountWaterfallMin), ColumnCountWaterfallMax);
+        
+        //self.waterfallLayout.columnCount = newColumnNumber < 1 ? 1 :newColumnNumber;
         [self.stepColCount setValue:newColumnNumber];
+        
     }
     
     CGFloat ratio = user.aspectRatio;
     //NSLog(@"ratio = %f", ratio);
-    CGFloat maxCellWidth = collectionView.bounds.size.width;
+    CGFloat maxCellWidth = collectionView.bounds.size.width - MinimumInteritemSpacing * 2.0 -
+    self.waterfallLayout.sectionInset.right * 2.0;
    
     CGSize sizeSetting = CGSizeMake(SizeW, SizeH);
     
@@ -215,6 +222,7 @@ static NSInteger photosInRequest = 16;
 
 #pragma mark - optional TASKS!!!111 :)
 -(void) scrollViewDidScroll:(UIScrollView *)scrollView{
+    
     if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
         if (!self.loadingData)
         {

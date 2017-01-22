@@ -54,7 +54,7 @@
 
 - (void) getPhotosWithOffset:(NSInteger) offset
                        count:(NSInteger) count
-                    onSuccess:(void(^)(NSArray* friends)) success
+                    onSuccess:(void(^)(NSArray* photos)) success
                     onFailure:(void(^)(NSError* error, NSInteger statusCode)) failure{
     
     NSDictionary* params =
@@ -70,7 +70,7 @@
      parameters:params
      progress:nil
      success:^(NSURLSessionTask *task, id responseObject) {
-         NSLog(@"JSON: %@", responseObject);
+         //NSLog(@"JSON: %@", responseObject);
          
          NSArray* dictsArray = [responseObject objectForKey:@"response"];
          
